@@ -1,0 +1,19 @@
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(oneByOneBlog => { %>
+                <a class="singleBlog" href="/blogs/<%= oneByOneBlog.id %>">
+                    <h3 class="title">Title: <%= oneByOneBlog.title %></h3>
+                    <p class="snippet">Snippet: <%= oneByOneBlog.snippet %></p>
+                    <p class="body">Body: <%= oneByOneBlog.body %></p>
+                </a>
+            <% }) %>
+        <% } %>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+</html>
